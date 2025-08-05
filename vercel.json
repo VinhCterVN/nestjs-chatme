@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run start:dev",
+  "installCommand": "npm install",
+  "outputDirectory": "dist",
+  "public": true,
+  "routes": [
+	{
+	  "src": "/(.*)",
+	  "dest": "dist/main.js"
+	}
+  ],
+  "builds": [
+	{
+	  "src": "dist/main.js",
+	  "use": "@vercel/node"
+	}
+  ],
+  "env": {
+	"NODE_ENV": "production",
+	"FIREBASE_PROJECT_ID": "@FIREBASE_PROJECT_ID",
+	"FIREBASE_CLIENT_EMAIL": "@FIREBASE_CLIENT_EMAIL",
+	"FIREBASE_PRIVATE_KEY": "@FIREBASE_PRIVATE_KEY"
+  }
+}
